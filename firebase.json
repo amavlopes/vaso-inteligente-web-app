@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "planta-iot",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

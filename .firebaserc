@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "planta-iot-esp32-rtdb": {
+      "hosting": {
+        "planta-iot": [
+          "planta-iot-esp32-rtdb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "planta-iot-esp32-rtdb"
+  }
+}
