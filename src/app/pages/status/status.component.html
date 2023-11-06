@@ -1,5 +1,17 @@
 <app-header></app-header>
 <main>
-  Status
+  <ul>
+    <li>Temperatura: {{ status.temperatura }}</li>
+    <li>Umidade Ar: {{ status.umidadeAr }}</li>
+    <li>Umidade Solo: {{ status.umidadeSolo }}</li>
+    <li>
+      <ul *ngIf="status.registrosLuminosidade.length">
+        <li *ngFor="let registro of status.registrosLuminosidade">
+          <p>{{registro.dataHoraLeitura}}</p>
+          <p>{{registro.valorLeitura}}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </main>
 <app-footer></app-footer>
