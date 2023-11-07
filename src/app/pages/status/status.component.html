@@ -1,17 +1,13 @@
 <app-header></app-header>
 <main>
   <ul>
-    <li>Temperatura: {{ status.temperatura }}</li>
-    <li>Umidade Ar: {{ status.umidadeAr }}</li>
-    <li>Umidade Solo: {{ status.umidadeSolo }}</li>
-    <li>
-      <ul *ngIf="status.registrosLuminosidade.length">
-        <li *ngFor="let registro of status.registrosLuminosidade">
-          <p>{{registro.dataHoraLeitura}}</p>
-          <p>{{registro.valorLeitura}}</p>
-        </li>
-      </ul>
-    </li>
+    <li>Temperatura: {{ status.temperatura! | toFixed:2:0 | number }}°C</li>
+    <li>Umidade Ar: {{ status.umidadeAr! | toFixed:2:0 | number }}%</li>
+    <li>Umidade Solo: {{ status.umidadeSolo }}% ({{ statusMensagemUmidadeSolo() }})</li>
+    <li>Horas exposição solar: {{ horasExposicaoIdeal | hoursMinutesSeconds }}</li>
   </ul>
+  <p *ngIf="horasExposicaoIdeal">{{ mostrarMensagemHorasExposicao() }}</p>
+  <p *ngIf="status.temperatura">{{ mostrarMensagemTemperatura() }}</p>
+  <p *ngIf="status.umidadeSolo">{{ mostrarMensagemUmidadeSolo() }}</p>
 </main>
 <app-footer></app-footer>

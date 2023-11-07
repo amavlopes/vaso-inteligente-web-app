@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,13 +13,19 @@ import { SplashScreenComponent } from './pages/splash-screen/splash-screen.compo
 import { StatusComponent } from './pages/status/status.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ToFixedPipe } from './pipes/to-fixed.pipe';
+import { HoursMinutesSecondsPipe } from './pipes/hours-minutes-seconds.pipe';
+
+registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
     SplashScreenComponent,
     StatusComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ToFixedPipe,
+    HoursMinutesSecondsPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +33,7 @@ import { FooterComponent } from './components/footer/footer.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase())
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
