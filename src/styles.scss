@@ -1,4 +1,12 @@
+:root {
+  --primary-color: #002140;
+  --secondary-color: #aaa9aa;
+  --bg-color-header: #fff3cc;
+  --bg-color-main: #fafafa;
+}
+
 html {
+  background-color: var(--bg-color-main);
   font-family: 'DM Sans', Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 400;
@@ -6,6 +14,7 @@ html {
 }
 
 body {
+  color: var(--primary-color);
   font-size: 1.2rem;
   line-height: 1.2rem;
 }

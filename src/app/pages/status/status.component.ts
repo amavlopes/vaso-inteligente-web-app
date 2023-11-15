@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroLuminosidade } from 'src/app/models/registro-luminosidade';
 import { Status } from 'src/app/models/status';
+import { Constants } from 'src/app/constants';
 
 import { StatusService } from 'src/app/services/status.service';
 
@@ -71,9 +72,9 @@ export class StatusComponent implements OnInit {
   mostrarMensagemHorasExposicao(): string {
     let mensagem = '';
     if (this.horasExposicaoIdeal && this.horasExposicaoIdeal < 2) {
-      mensagem = 'Ainda não recebi a dose diária mínima de luz solar (2h a 4h por dia).';
+      mensagem = Constants.mensagens.doseDiariaMinimaNaoRecebida;
     } else if (this.horasExposicaoNaoPermitida && this.horasExposicaoNaoPermitida >= 2) {
-      mensagem = `Cuidado! Não posso receber luz solar direta fora dos horários permitidos, antes das 10h e após às 16h.`;
+      mensagem = Constants.mensagens.luzSolarDiretaNaoPermitido;
     }
     return mensagem;
   }
@@ -81,25 +82,25 @@ export class StatusComponent implements OnInit {
   mostrarMensagemTemperatura(): string {
     let mensagem = '';
     if (this.status.temperatura && this.status.temperatura > 26) {
-      mensagem = 'Está fazendo calor, não está?';
+      mensagem = Constants.mensagens.estaFazendoCalor;
     } else if (this.status.temperatura && this.status.temperatura < 20) {
-      mensagem = 'Que friozinho gostoso!';
+      mensagem = Constants.mensagens.estaFazendoFrio;
     }
     return mensagem;
   }
 
   mostrarMensagemUmidadeSolo(): string {
-    return (this.status.umidadeSolo && this.status.umidadeSolo < 30) ? 'Estou com sede!' : '';
+    return (this.status.umidadeSolo && this.status.umidadeSolo < 30) ? Constants.mensagens.estouComSede : Constants.campoVazio;
   }
 
   statusMensagemUmidadeSolo(): string {
     let mensagem;
     if (this.status.umidadeSolo! > 65) {
-      mensagem = 'Umidade alta';
+      mensagem = Constants.mensagens.umidadeAlta;
     } else if (this.status.umidadeSolo! <= 65 && this.status.umidadeSolo! >= 30) {
-      mensagem = 'Umidade média';
+      mensagem = Constants.mensagens.umidadeMedia;
     } else {
-      mensagem = 'Umidade baixa';
+      mensagem = Constants.mensagens.umidadeBaixa;
     }
     return mensagem;
   }
