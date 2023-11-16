@@ -73,7 +73,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  //font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: .5rem;
@@ -112,7 +111,7 @@ h6 {
 }
 
 p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.3;
 }
 
@@ -120,30 +119,18 @@ main {
   position: relative;
   height: 100%;
   overflow: hidden;
-
-  .destaque {
-    display: block;
-    position: absolute;
-    right: -100px;
-  }
 }
 
 .container {
-  background-color: #fff;
-  width: 450px;
+  width: 767px;
   max-width: 100%;
   margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .header-title {
   margin: 3rem 0;
-}
-
-.conteudo {
-  // align-items: center;
-  // display: flex;
-  // flex-direction: row;
-  // gap: 1rem;
 }
 
 ul.status {
@@ -166,5 +153,47 @@ ul.status {
 }
 
 .bio {
-  margin: 5rem 0;
+  margin: 0 0 3rem;
+}
+
+@media (max-width: 767px) {
+  .conteudo {
+    & > img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
 }

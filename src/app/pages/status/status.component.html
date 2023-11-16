@@ -1,51 +1,54 @@
-<div class="container">
   <app-header></app-header>
   <main>
 
-    <div class="header-title">
-      <h1>Peperômia Melancia</h1>
-      <h5 class="alternative-text">Terça-Feira 07.11.2023</h5>
-    </div>
+    <div class="container">
 
-    <div class="conteudo">
-      <img class="destaque" src="/assets/planta.svg" alt="Peperômia Melancia">
+      <div class="header-title">
+        <h1>Peperômia Melancia</h1>
+        <h5 class="alternative-text">Terça-Feira 07.11.2023</h5>
+      </div>
 
-      <ul class="status">
-        <li>
-          <h3>
-            <img src="/assets/humidity-icon.svg" alt="Umidade do solo">
-            {{ status.umidadeSolo }}% ({{ statusMensagemUmidadeSolo() }})
-          </h3>
-          <h5 class="alternative-text">Umidade do Solo</h5>
-        </li>
-        <li>
-          <h3>
-            <img src="/assets/sunlight-icon.svg" alt="Horas de exposição solar">
-            {{ horasExposicaoIdeal | hoursMinutesSeconds }}
-          </h3>
-          <h5 class="alternative-text">Horas de exposição solar</h5>
-        </li>
-        <li>
-          <h3>
-            <img src="/assets/thermo-icon.svg" alt="Temperatura">
-            {{ status.temperatura! | toFixed:2:0 | number }}°C
-          </h3>
-          <h5 class="alternative-text">Temperatura ambiente</h5>
-        </li>
-        <li>
-          <h3>
-            <img src="/assets/air-humidity.svg" alt="Umidade do ar">
-            {{ status.umidadeAr! | toFixed:2:0 | number }}%
-          </h3>
-          <h5 class="alternative-text">Umidade do Ar</h5>
-        </li>
-      </ul>
-    </div>
+      <div class="conteudo">
+        <img src="/assets/planta.svg" alt="Peperômia Melancia">
 
-    <div class="bio">
-      <h4>Sobre</h4>
+        <ul class="status">
+          <li>
+            <h3>
+              <img src="/assets/humidity-icon.svg" alt="Umidade do solo">
+              {{ status.umidadeSolo }}% ({{ statusMensagemUmidadeSolo() }})
+            </h3>
+            <h5 class="alternative-text">Umidade do Solo</h5>
+          </li>
+          <li>
+            <h3>
+              <img src="/assets/sunlight-icon.svg" alt="Horas de exposição solar">
+              {{ horasExposicaoIdeal | hoursMinutesSeconds }}
+            </h3>
+            <h5 class="alternative-text">Horas de exposição solar</h5>
+          </li>
+          <li>
+            <h3>
+              <img src="/assets/thermo-icon.svg" alt="Temperatura">
+              {{ status.temperatura! | toFixed:2:0 | number }}°C
+            </h3>
+            <h5 class="alternative-text">Temperatura ambiente</h5>
+          </li>
+          <li>
+            <h3>
+              <img src="/assets/air-humidity.svg" alt="Umidade do ar">
+              {{ status.umidadeAr! | toFixed:2:0 | number }}%
+            </h3>
+            <h5 class="alternative-text">Umidade do Ar</h5>
+          </li>
+        </ul>
+      </div>
 
-      <p>É uma espécie de planta com flor da família da pimenta Piperaceae, nativa do norte da América do Sul, incluindo Bolívia, Brasil, Equador e Venezuela. A planta não está intimamente relacionada com melancias ou begônias</p>
+      <div class="bio">
+        <h4>Sobre</h4>
+
+        <p>É uma espécie de planta com flor da família da pimenta Piperaceae, nativa do norte da América do Sul, incluindo Bolívia, Brasil, Equador e Venezuela. A planta não está intimamente relacionada com melancias ou begônias</p>
+      </div>
+
     </div>
 
     <!-- <p *ngIf="horasExposicaoIdeal">{{ mostrarMensagemHorasExposicao() }}</p>
@@ -54,4 +57,3 @@
 
   </main>
   <app-footer></app-footer>
-</div>
