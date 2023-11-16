@@ -1,4 +1,8 @@
-  <app-header></app-header>
+  <app-header
+    [mostrarMensagemHorasExposicao]="mostrarMensagemHorasExposicao()"
+    [mostrarMensagemTemperatura]="mostrarMensagemTemperatura()"
+    [mostrarMensagemUmidadeSolo]="mostrarMensagemUmidadeSolo()">
+  </app-header>
   <main>
 
     <div class="container">
@@ -50,10 +54,6 @@
       </div>
 
     </div>
-
-    <!-- <p *ngIf="horasExposicaoIdeal">{{ mostrarMensagemHorasExposicao() }}</p>
-    <p *ngIf="status.temperatura">{{ mostrarMensagemTemperatura() }}</p>
-    <p *ngIf="status.umidadeSolo">{{ mostrarMensagemUmidadeSolo() }}</p> -->
 
   </main>
   <app-footer></app-footer>

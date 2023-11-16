@@ -1,4 +1,40 @@
-header {
+nav {
   background-color: var(--bg-color-header);
-  padding: 2rem;
+  padding: 2rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown {
+
+  .dropdown-toggle {
+    color: var(--primary-color);
+    font-size: 2rem;
+  }
+
+}
+
+.dropdown-menu {
+  padding: 1rem 0;
+  width: 150px;
+
+  li {
+    margin-bottom: .5rem;
+
+    p {
+      font-size: 1.4rem;
+      padding: 0 .8rem;
+      line-height: 1.2;
+    }
+  }
+}
+
+.badge-notification {
+  background-color: var(--tertiary-color);
+  width: 0.8rem;
+  height: 0.8rem;
 }
