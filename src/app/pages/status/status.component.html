@@ -9,42 +9,43 @@
 
       <div class="header-title">
         <h1>Peperômia Melancia</h1>
-        <h5 class="alternative-text">Terça-Feira 07.11.2023</h5>
+        <h6 class="alternative-text data">{{ dataAtual | date : 'EEEE, M.d.yyyy' }}</h6>
       </div>
 
       <div class="conteudo">
         <img src="/assets/planta.svg" alt="Peperômia Melancia">
 
-        <ul class="status">
+        <ul class="status" *ngIf="registrosDoDia.length">
           <li>
             <h3>
               <img src="/assets/humidity-icon.svg" alt="Umidade do solo">
-              {{ status.umidadeSolo }}% ({{ statusMensagemUmidadeSolo() }})
+              {{ status.umidadeSolo! | toFixed:2:0 | number }}% ({{ statusMensagemUmidadeSolo() }})
             </h3>
-            <h5 class="alternative-text">Umidade do Solo</h5>
+            <h6 class="alternative-text">Umidade do Solo</h6>
           </li>
           <li>
             <h3>
               <img src="/assets/sunlight-icon.svg" alt="Horas de exposição solar">
               {{ horasExposicaoIdeal | hoursMinutesSeconds }}
             </h3>
-            <h5 class="alternative-text">Horas de exposição solar</h5>
+            <h6 class="alternative-text">Horas de exposição solar</h6>
           </li>
           <li>
             <h3>
               <img src="/assets/thermo-icon.svg" alt="Temperatura">
               {{ status.temperatura! | toFixed:2:0 | number }}°C
             </h3>
-            <h5 class="alternative-text">Temperatura ambiente</h5>
+            <h6 class="alternative-text">Temperatura ambiente</h6>
           </li>
           <li>
             <h3>
               <img src="/assets/air-humidity.svg" alt="Umidade do ar">
               {{ status.umidadeAr! | toFixed:2:0 | number }}%
             </h3>
-            <h5 class="alternative-text">Umidade do Ar</h5>
+            <h6 class="alternative-text">Umidade do Ar</h6>
           </li>
         </ul>
+
       </div>
 
       <div class="bio">

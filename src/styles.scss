@@ -1,9 +1,12 @@
 :root {
   --primary-color: #002140;
+  --primary-color-alternative: #003669;
   --secondary-color: #aaa9aa;
   --tertiary-color: #3A7F0D;
   --bg-color-header: #fff3cc;
   --bg-color-main: #fbfbfb;
+  --color-danger: #dc4c64;
+  --color-warning: #e4a11b;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -57,7 +60,6 @@ table {
 }
 
 html {
-  background-color: var(--bg-color-main);
   font-family: 'Philosopher', Georgia, 'Times New Roman', Times, serif;
   font-size: 10px;
   font-weight: 400;
@@ -99,21 +101,22 @@ h4 {
 h5 {
   font-size: 1.6rem;
   font-weight: 700;
-
-  &.alternative-text {
-    color: var(--secondary-color);
-    font-family: 'Philosopher', Georgia, 'Times New Roman', Times, serif;
-  }
 }
 
 h6 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
 p {
   font-size: 1.8rem;
   line-height: 1.3;
+}
+
+.alternative-text {
+  color: var(--secondary-color);
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 main {
@@ -157,6 +160,15 @@ ul.status {
   margin: 0 0 3rem;
 }
 
+
+.danger {
+  color: var(--color-danger);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
 @media (max-width: 767px) {
   .conteudo {
     & > img {
@@ -186,10 +198,6 @@ ul.status {
   }
 
   h5 {
-    font-size: 1.5rem;
-  }
-
-  h6 {
     font-size: 1.5rem;
   }
 

@@ -19,16 +19,19 @@ nav {
 }
 
 .dropdown-menu {
-  padding: 1rem 0;
-  width: 150px;
+  margin-top: .5rem;
+  padding: .5rem 0;
+  min-width: 220px;
 
   li {
-    margin-bottom: .5rem;
-
     p {
-      font-size: 1.4rem;
-      padding: 0 .8rem;
+      cursor: pointer;
+      color: var(--primary-color-alternative);
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
       line-height: 1.2;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
     }
   }
 }

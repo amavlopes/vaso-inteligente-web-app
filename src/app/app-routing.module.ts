@@ -5,8 +5,7 @@ import { SplashScreenComponent } from './pages/splash-screen/splash-screen.compo
 import { StatusComponent } from './pages/status/status.component';
 
 const routes: Routes = [
-  { path: '', component: SplashScreenComponent },
-  { path: 'status', component: StatusComponent }
+  { path: '', component: StatusComponent }
 ];
 
 @NgModule({
