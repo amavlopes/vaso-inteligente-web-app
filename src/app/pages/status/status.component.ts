@@ -11,12 +11,12 @@ import { StatusService } from 'src/app/services/status.service';
   styleUrls: ['./status.component.scss']
 })
 export class StatusComponent implements OnInit {
-  private readonly incidenciaSolarMinima = 7000;
+  private readonly incidenciaSolarMinima = 700;
   private readonly incidenciaSolarMaxima = 25000;
-  private readonly tempoDaLeitura = 30;
+  private readonly tempoDaLeitura = 3;
 
   public dataAtual!: Date;
-  public registrosDoDia!: Registro[];
+  public registrosDoDia: Registro[] = [];
   public status!: Status;
   public horasExposicaoIdeal!: number;
   public horasExposicaoNaoPermitida!: number;
@@ -32,7 +32,8 @@ export class StatusComponent implements OnInit {
     this.statusService.registros.subscribe((registros: Registro[]) => {
       this.dataAtual = new Date();
       const dataDepara = `${new Date().getFullYear()}-${(new Date().getMonth()) + 1}-${new Date().getDate()}`;
-      this.registrosDoDia = registros.filter((registro: Registro) => registro.dataLeitura === dataDepara);
+      if (registros && registros.length)
+        this.registrosDoDia = registros.filter((registro: Registro) => registro.dataLeitura === dataDepara);
 
       if(this.registrosDoDia.length) {
         this.status = new Status();
@@ -45,6 +46,8 @@ export class StatusComponent implements OnInit {
         this.horasExposicaoNaoPermitida = this.calcularHorasDeExposicaoSolarNaoPermitida(this.status.registrosLuminosidade);
       }
     });
+
+    console.log();
   }
 
   calcularHorasDeExposicaoSolarIdeal(registrosLuminosidade: number[]): number {
@@ -101,6 +104,10 @@ export class StatusComponent implements OnInit {
       mensagem = Constants.mensagens.umidadeBaixa;
     }
     return mensagem;
+  }
+
+  deletarDados() {
+    this.statusService.deletarDados();
   }
 
 }

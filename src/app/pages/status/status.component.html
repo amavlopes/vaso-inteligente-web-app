@@ -7,13 +7,15 @@
 
     <div class="container">
 
+      <!-- <button (click)="deletarDados()">Deletar dados</button> -->
+
       <div class="header-title">
-        <h1>Peperômia Melancia</h1>
-        <h6 class="alternative-text data">{{ dataAtual | date : 'EEEE, M.d.yyyy' }}</h6>
+        <h1>Iresine herbstii</h1>
+        <h6 class="alternative-text data">{{ dataAtual | date : 'EEEE, dd.MM.yyyy' }}</h6>
       </div>
 
       <div class="conteudo">
-        <img src="/assets/planta.svg" alt="Peperômia Melancia">
+        <img src="/assets/iresine-herbstii.webp" alt="Iresine herbstii">
 
         <ul class="status" *ngIf="registrosDoDia.length">
           <li>
@@ -48,11 +50,11 @@
 
       </div>
 
-      <div class="bio">
+      <!-- <div class="bio">
         <h4>Sobre</h4>
 
         <p>É uma espécie de planta com flor da família da pimenta Piperaceae, nativa do norte da América do Sul, incluindo Bolívia, Brasil, Equador e Venezuela. A planta não está intimamente relacionada com melancias ou begônias</p>
-      </div>
+      </div> -->
 
     </div>
 

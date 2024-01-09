@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Database, ref, onValue } from '@angular/fire/database';
+import { Database, ref, onValue, remove } from '@angular/fire/database';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Registro } from '../models/registro';
 
@@ -22,6 +22,10 @@ export class StatusService {
       this.registros$.next(snapshot.val());
     });
 
+  }
+
+  deletarDados() {
+    remove(ref(this.database, 'sensores/registros'));
   }
 
 }
